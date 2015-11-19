@@ -7,7 +7,12 @@ class FakeCoursera < Sinatra::Base
   end
 
   get '/api/courses.v1/:id' do
-    json_response 200, 'course/find.json'
+  	if params.empty?
+      json_response 200, 'course/find.json'
+    else
+      # => startDate, :description, :instructorIds (better way to do this? seems inflexible)
+      json_response 200, 'course/find_with_fields.json'
+    end
   end
 
   private
