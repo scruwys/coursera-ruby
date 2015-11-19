@@ -22,10 +22,16 @@ module Coursera
     end
 
     def self.batch_request(route, attrs = {})
-      request = self.get(route, {query: attrs})["elements"]
+      request = self.get_elements(route, {query: attrs})
       results = []
-      request.each { |obj| results << new(obj) }
+      (request ||= []).each { |obj| results << new(obj) }
       results
+    end
+
+    def self.get_elements(route, attrs = {})
+      self.get(route, {query: attrs})["elements"]
+    rescue
+      nil
     end
   end
 end

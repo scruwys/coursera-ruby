@@ -53,6 +53,20 @@ describe Coursera::Course do
         end
       end
     end
+
+    context 'for invalid identifer' do
+      before do 
+        @course = Coursera::Course.find "invalid-parameter"
+      end
+
+      it 'does not return a Course' do
+        expect(@course).to_not be_a Coursera::Course
+      end
+
+      it 'returns nothing' do
+        expect(@course).to be_nil
+      end
+    end
   end
 
   describe '#start_date' do

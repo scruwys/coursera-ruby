@@ -9,9 +9,9 @@ module Coursera
     # => Coursera::Course.find("Gtv4Xb1-EeS-ViIACwYKVQ")
     def self.find(id, attrs = {})
       attrs = self.prepare_attributes(attrs)
-      route = "/courses.v1/#{id}"
+      elems = self.get_elements("/courses.v1/#{id}", {query: attrs})
 
-      Coursera::Course.new self.get(route, {query: attrs})["elements"][0]
+      Coursera::Course.new elems[0] if (elems ||= []).size > 0
     end
 
     # => Coursera::Course.find_many(["Gtv4Xb1-EeS-ViIACwYKVQ", "zfksZy_FEeWWqBIFfWmDPQ"])
@@ -25,9 +25,9 @@ module Coursera
     # => Coursera::Course.find_by_slug("machine-learning")
     def self.find_by_slug(input, attrs = {})
       attrs = self.prepare_attributes(attrs)
-      route = "/courses.v1?q=slug&slug=#{input}"
-      
-      Coursera::Course.new self.get(route, {query: attrs})["elements"][0]      
+      elems = self.get_elements("/courses.v1?q=slug&slug=#{input}", {query: attrs})
+
+      Coursera::Course.new elems[0] if (elems ||= []).size > 0
     end
 
     def start_date

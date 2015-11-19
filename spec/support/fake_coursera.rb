@@ -9,6 +9,8 @@ class FakeCoursera < Sinatra::Base
   get '/api/courses.v1/:id' do
   	if params.empty?
       json_response 200, 'course/find.json'
+    elsif params[:id] == 'invalid-parameter'
+      json_response 400, 'course/invalid.json'
     else
       # => startDate, :description, :instructorIds (better way to do this? seems inflexible)
       json_response 200, 'course/find_with_fields.json'
