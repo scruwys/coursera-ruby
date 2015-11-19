@@ -13,5 +13,12 @@ module Coursera
         define_singleton_method(k) { v }
       end
     end
+
+    def self.prepare_attributes(attrs)
+      attrs.each do |key, value|
+        attrs[key] = attrs[key].map(&:to_s).join(",") if attrs[key].kind_of?(Array)
+      end
+      attrs
+    end
   end
 end

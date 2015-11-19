@@ -1,4 +1,5 @@
 require "coursera/base"
+require "coursera/course"
 
 module Coursera
   class Client < Coursera::Base
