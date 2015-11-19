@@ -1,6 +1,11 @@
 require 'sinatra/base'
 
 class FakeCoursera < Sinatra::Base
+
+  get '/api/courses.v1' do
+    json_response 200, 'course/all.json'
+  end
+
   get '/api/courses.v1/:id' do
     json_response 200, 'course/find.json'
   end

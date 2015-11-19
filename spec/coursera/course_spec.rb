@@ -2,6 +2,17 @@ require 'spec_helper'
 
 describe Coursera::Course do
 
+  describe '.all' do
+    before do
+      @courses = Coursera::Course.all
+    end
+
+    it 'returns multiple Courses' do
+      expect(@courses.size).to be 6
+      expect(@courses.first).to be_a Coursera::Course
+    end
+  end
+  
   describe '.find' do
     before do         
       @course = Coursera::Course.find "69Bku0KoEeWZtA4u62x6lQ"

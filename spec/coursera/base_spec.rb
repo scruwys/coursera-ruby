@@ -41,4 +41,23 @@ describe Coursera::Base do
       expect(@attrs[:more]).to eq('stuff')
     end
   end
+
+  describe '.batch_request' do
+    before do
+      @request = Coursera::Course.batch_request('/courses.v1')
+    end
+
+    it 'returns multiple Courses' do
+      expect(@request.size).to be 6
+      expect(@request.first).to be_a Coursera::Course
+    end
+
+    context 'parses the correct fields' do
+      data_from_json('course/all.json')['elements'][0].each do |field, value|
+        it "respond to #{field}" do
+          expect(@request[0].send field).to eq(value)
+        end
+      end
+    end
+  end
 end

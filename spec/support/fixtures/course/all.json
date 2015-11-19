@@ -1,0 +1,40 @@
+{
+   "elements": [
+      {
+        "id": "v1-228",
+        "slug": "digitalmedia",
+        "courseType": "v1.session",
+        "name": "Creative Programming for Digital Media & Mobile Apps"
+      },
+      {
+        "id": "69Bku0KoEeWZtA4u62x6lQ",
+        "slug": "gamification",
+        "courseType": "v2.ondemand",
+        "name": "Gamification"
+      },
+      {
+        "id": "v9CQdBkhEeWjrA6seF25aw",
+        "courseType": "v2.ondemand",
+        "slug": "modern-art-ideas",
+        "name": "Modern Art & Ideas"
+      },
+      {
+        "id": "QgmoVdT2EeSlhSIACx2EBw",
+        "courseType": "v2.ondemand",
+        "name": "The Evolving Universe",
+        "slug": "evolvinguniverse"
+      },
+      {
+        "id": "KXOLVTovEeWnxw5wP_KHTw",
+        "courseType": "v2.ondemand",
+        "slug": "intro-to-big-data",
+        "name": "Introduction to Big Data"
+      },
+      {
+        "id": "QTTRdG3vEeWG0w42Sx-Gkw",
+        "slug": "learntomod",
+        "courseType": "v2.ondemand",
+        "name": "LearnToMod For Educators"
+      }
+   ]
+}
