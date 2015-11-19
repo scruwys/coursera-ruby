@@ -63,7 +63,7 @@ courses = Coursera::Course.all(limit: 30) # pass optional limit parameter to cap
 
 Search functionality is also included:
 ```ruby
-client = Coursera::Course.new
+client = Coursera::Client.new
 
 client.search_courses("data analytics", { fields: [:name, :photo], limit: 5 })
 #=> [#<Coursera::Course ...>, #<Coursera::Course ...>]
