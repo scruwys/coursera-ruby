@@ -29,5 +29,9 @@ module Coursera
       
       Coursera::Course.new self.get(route, {query: attrs})["elements"][0]      
     end
+
+    def start_date
+      Time.at(self.startDate / 1000) unless self.startDate.nil?
+    end
   end
 end

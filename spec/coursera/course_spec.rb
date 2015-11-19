@@ -54,4 +54,13 @@ describe Coursera::Course do
       end
     end
   end
+
+  describe '#start_date' do
+    before do
+      @course = Coursera::Course.find "69Bku0KoEeWZtA4u62x6lQ", { fields: [:startDate, :description, :instructorIds] }
+    end
+
+    it { expect(@course.startDate).to  eq(1447095621493) }
+    it { expect(@course.start_date).to eq(Time.at(1447095621493 / 1000)) }
+  end
 end
