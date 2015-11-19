@@ -1,5 +1,7 @@
 # Coursera API
 
+<a href="https://codeclimate.com/github/scruwys/coursera-ruby"><img src="https://codeclimate.com/github/scruwys/coursera-ruby/badges/gpa.svg" /></a>
+
 This is an unofficial Ruby library for the [Catalog APIs](https://tech.coursera.org/app-platform/catalog/) provided by Coursera.
 
 *Disclaimer: According to Coursera, these APIs are still in <b>beta</b> and can change in backwards-incompatible ways without warning. Therefore, beware when using this gem in production.* 
