@@ -26,32 +26,32 @@ There are three primary endpoints for the Coursera API: [Courses](https://api.co
 You can search for a course if you know the ID:
 
 ```ruby
-course = Coursera::Course.find("v1-228")
-#=> #<Coursera::Course id="v1-228" ...>
+course = Coursera::Course.find("Gtv4Xb1-EeS-ViIACwYKVQ")
+#=> #<Coursera::Course id="Gtv4Xb1-EeS-ViIACwYKVQ" ...>
 ```
 
 Or if you know the slug you are interested in:
 
 ```ruby
-course = Coursera::Course.find_by_slug("digitalmedia")
-#=> #<Coursera::Course id="v1-228" ...>
+course = Coursera::Course.find_by_slug("machine-learning")
+#=> #<Coursera::Course id="Gtv4Xb1-EeS-ViIACwYKVQ" ...>
 ```
 
 You can then access course attributes like this :
 
 ```ruby
 course.name
-#=> "Creative Programming for Digital Media & Mobile Apps"
+#=> "Machine Learning"
 
 course.slug
-#=> "digitalmedia"
+#=> "machine-learning"
 ```
 
 You can add additional fields via a hash parameter:
 
 ```ruby
-course = Coursera::Course.find("v1-228", {fields: [:startDate, :description]})
-#=> #<Coursera::Course id="v1-228", description="For anyone ...>
+course = Coursera::Course.find("Gtv4Xb1-EeS-ViIACwYKVQ", {fields: [:startDate, :description]})
+#=> #<Coursera::Course id="Gtv4Xb1-EeS-ViIACwYKVQ", description="Machine learning is ...>
 ```
 
 Query the entire course catalog via the ```.all``` method:

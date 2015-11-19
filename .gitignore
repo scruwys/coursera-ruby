@@ -7,3 +7,7 @@
 /pkg/
 /spec/reports/
 /tmp/
+
+.DS_Store
+
+*.gem

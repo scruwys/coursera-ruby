@@ -29,7 +29,7 @@ module Coursera
     end
 
     def self.get_elements(route, attrs = {})
-      self.get(route, {query: attrs})["elements"]
+      self.get(route, attrs)["elements"]
     rescue
       nil
     end
